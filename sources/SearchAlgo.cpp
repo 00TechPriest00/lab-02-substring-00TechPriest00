@@ -220,7 +220,6 @@ size_t kmp_find(std::string findStr, string str)
     int i = 0;
     int lenStr = strLen(str);
     int iskZnach;
-    int a;
     int lenFindStr = strLen(findStr);
 
     while (i < lenStr)
