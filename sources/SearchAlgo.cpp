@@ -96,9 +96,6 @@ size_t rk_find(const string& str, const string& substr)
     int totalch = strLen(str);
     while (buff != hush)
     {
-        char ch1 = str[cntr1];
-        char ch2 = str[cntr2];
-
         buff = (buff - ((int)str[cntr1])) / prime + ((int)str[cntr2])*powX(prime,len-1);
         cntr1++;
         cntr2++;
