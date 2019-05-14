@@ -212,7 +212,7 @@ int *prefFunc(std::string str)
 }*/
 
 //Алгоритм Кнута - Морриса - Пратта
-void test(std::string findStr, string str)
+size_t kmp_find(std::string findStr, string str)
 {
     int *prefFindStr = prefFunc(findStr);
 
@@ -236,7 +236,6 @@ void test(std::string findStr, string str)
         }
     }
     iskZnach = i - index + 1;
-    cout << iskZnach;
     delete[] prefFindStr;
-    cin >> a;
+    return iskZnach;
 }
