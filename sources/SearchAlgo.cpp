@@ -29,7 +29,7 @@ int powX(int x, int y)
     return retval;
 }
 
-size_t str_find(const string& str, const string& substr)
+size_t str_find(const std::string& str, const std::string& substr)
 {
     int a = strLen(str);
     int b = strLen(substr);
@@ -54,7 +54,7 @@ size_t str_find(const string& str, const string& substr)
     return -1;
 }
 
-size_t rk_find(const string& str, const string& substr)
+size_t rk_find(const std::string& str, const std::string& substr)
 {
     int prime = 11;
     int oldPrime = 11;
@@ -119,7 +119,7 @@ size_t rk_find(const string& str, const string& substr)
 }
 
 //Алгоритм считающий длинну префикс функции
-int *prefFunc(string str)
+int *prefFunc(std::string str)
 {
     int len = strLen(str);
     int counter = 0;
@@ -212,7 +212,7 @@ int *prefFunc(string str)
 }*/
 
 //Алгоритм Кнута - Морриса - Пратта
-void test(string findStr, string str)
+void test(std::string findStr, string str)
 {
     int *prefFindStr = prefFunc(findStr);
 

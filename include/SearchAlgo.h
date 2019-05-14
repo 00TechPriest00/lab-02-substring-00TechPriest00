@@ -20,8 +20,8 @@ using namespace std;
 
 int strLen(const string& str);
 int powX(int x, int y);
-size_t str_find(const string& str, const string& substr);
-size_t rk_find(const string& str, const string& substr);
-void test(string findStr, string str);
+size_t str_find(const std::string& str, const std::string& substr);
+size_t rk_find(const std::string& str, const std::string& substr);
+void test(std::string findStr, std::string str);
 
 #endif
