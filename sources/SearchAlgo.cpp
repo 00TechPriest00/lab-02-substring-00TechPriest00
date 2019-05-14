@@ -113,8 +113,7 @@ size_t rk_find(const string& str, const string& substr)
         if (str[cntr1] == substr[k])
         {
             cntr1++;
-        }
-        else
+        }else
         {
             return -1;//Слово не найдено
         }
@@ -126,12 +125,12 @@ size_t rk_find(const string& str, const string& substr)
 int *prefFunc(string str)
 {
     int len = strLen(str);
-    int counter=0;
+    int counter = 0;
     int j = 0;
     int saverI = 0;
 
     int *prefFunc1 = new int[len];
-    memset(prefFunc1,0,len*sizeof(int));
+    memset(prefFunc1, 0, len*sizeof(int));
 
     for (int i = 0; i < len; i++)
     {
@@ -156,8 +155,7 @@ int *prefFunc(string str)
                 {
                 j++;
                 i++;
-                }
-                else
+                }else
                 {
                     goto flag;
                 }
@@ -220,14 +218,14 @@ int *prefFunc(string str)
 void test(string findStr, string str)
 {
     int *prefFindStr = prefFunc(findStr);
-    
+
     int index = 0;
     int i = 0;
     int lenStr = strLen(str);
     int iskZnach;
     int a;
     int lenFindStr = strLen(findStr);
-    
+
     while (i < lenStr)
     {
         while (findStr[index] == str[i] && index < lenFindStr)

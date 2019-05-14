@@ -2,7 +2,6 @@
 #define SearchAlgo_h
 
 #include <stdio.h>
-#include "stdafx.h"
 #include <stdlib.h>
 #include <iostream>
 #include <string.h> 
