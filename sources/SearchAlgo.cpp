@@ -100,7 +100,7 @@ label:
 			return -1;
 		}
 
-		long long a, b, c, d, e;
+		long long a, b, c, e;
 		a = buff - (int)str[cntr1];
 		b = a / prime;
 		c = pow(prime, len - 1);
