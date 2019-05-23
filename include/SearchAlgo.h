@@ -19,8 +19,9 @@
 using namespace std;
 
 int strLen(const string& str);
-int powX(int x, int y);
+long powX(long x, long y);
 size_t str_find(const std::string& str, const std::string& substr);
+long calcHush(const string & str, int len, int indStart);
 size_t rk_find(const std::string& str, const std::string& substr);
 size_t kmp_find(std::string findStr, string str);
 
