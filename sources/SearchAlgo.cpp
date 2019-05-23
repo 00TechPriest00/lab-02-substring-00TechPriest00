@@ -140,9 +140,10 @@ vector<int> prefFunc(string s)
 		{
 			j = intArr[j - 1];
 		}
-		if (s[i] == s[j])  ++j;{
-			intArr[i] = j;
+		if (s[i] == s[j]){  
+			++j;
 		}
+		intArr[i] = j;
 	}
 	return intArr;
 }
