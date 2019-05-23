@@ -1,6 +1,7 @@
 //"Copyright 2019 Fedorov George"
 #include "SearchAlgo.h"
 #define PRIMEVAL 2
+#define INT_MAX 2147483647
 
 struct arch
 {
