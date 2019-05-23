@@ -152,7 +152,7 @@ vector<int> prefFunc(string s)
 size_t kmp_find(string str, std::string findStr)
 {
 	vector<int> pIntArr = prefFunc(findStr);
-	int sLen = str.length();
+	unsigned int sLen = str.length();
 	for (unsigned int k = 0, i = 0; i < sLen; i++)
 	{
 		while ((k > 0) && (findStr[k] != str[i]))
