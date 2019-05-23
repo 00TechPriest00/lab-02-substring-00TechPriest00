@@ -71,7 +71,7 @@ int calcHush(const string & str, int len, int indStart)
         }else{
             hush += (static_cast<int>(a))*prime;
             prime = prime*oldPrime;
-            if (hush >= 9223372036854775807){
+            if (hush >= INT_MAX){
                 hush = 0;
             }
         }
