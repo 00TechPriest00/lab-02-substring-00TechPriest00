@@ -67,15 +67,13 @@ _int64 calcHush(const string & str, int len, int indStart)
     {
         a = str[i];
         if (i == indStart){
-
-            hush = (int)a;
+			hush = static_cast<int>(a);
         }
         else
         {
-            hush += ((int)a)*prime;
+			hush += (static_cast<int>(a))*prime;
             prime = prime*oldPrime;
-            if (hush >= 9223372036854775807)
-            {
+            if (hush >= 9223372036854775807){
                 hush = 0;
             }
         }
@@ -118,7 +116,7 @@ label:
         }
         else{
             if (cntr1 < totalch - 1)
-            {
+			{
                 buff = calcHush(str, strLen(substr), cntr3 + 1);
                 cntr1 = cntr3 + 1;
                 goto label;
