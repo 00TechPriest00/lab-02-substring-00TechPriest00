@@ -1,7 +1,7 @@
 //"Copyright 2019 Fedorov George"
 #include "SearchAlgo.h"
 #define PRIMEVAL 2
-#define INT_MAX 2147483647
+#define INT_MAX 9223372036854775807
 
 struct arch
 {
@@ -58,11 +58,11 @@ size_t str_find(const std::string& str, const std::string& substr)
 }
 
 //--------------------------- RK_FIND ----------------------------------------
-int calcHush(const string & str, int len, int indStart)
+int64 calcHush(const string & str, int len, int indStart)
 {
-    int prime = PRIMEVAL;
+    int64  prime = PRIMEVAL;
     int oldPrime = PRIMEVAL;
-    int hush = 0;
+    int64 hush = 0;
     char a;
     for (int i = indStart; i < indStart + len; i++)
     {
@@ -82,11 +82,10 @@ int calcHush(const string & str, int len, int indStart)
 
 size_t rk_find(const std::string& str, const std::string& substr)
 {
-    int hush = 0;
-    int buff = 0;
-    int prime = PRIMEVAL;
+    int64 hush = 0;
+    int64 buff = 0;
+    int64 prime = PRIMEVAL;
     int cntr1 = 0;
-    //int cntr2 = strLen(substr);
     int totalch = strLen(str);
     int len = strLen(substr);
 
@@ -99,11 +98,11 @@ label:
             return -1;
         }
 
-        int a, b, c, e;
+        int64 a, b, c, e;
         a = buff - static_cast<int>(str[cntr1]);
         b = a / prime;
         c = pow(prime, len - 1);
-        e = (static_cast<int>(str[cntr1 + len]))*c;
+        e = int(str[cntr1 + len])*c;
         buff = b + e;
         cntr1++;
     }
@@ -124,7 +123,6 @@ label:
     }
     return cntr3;
 }
-
 //------------------------- KMP ФУНКЦИЯ ----------------------
 //Алгоритм считающий префикс функцию
 vector<int> prefFunc(string s)
