@@ -67,11 +67,10 @@ _int64 calcHush(const string & str, int len, int indStart)
     {
         a = str[i];
         if (i == indStart){
-			hush = static_cast<int>(a);
-        }
-        else
+            hush = static_cast<int>(a);
+        }else
         {
-			hush += (static_cast<int>(a))*prime;
+            hush += (static_cast<int>(a))*prime;
             prime = prime*oldPrime;
             if (hush >= 9223372036854775807){
                 hush = 0;
@@ -121,14 +120,14 @@ label:
                 cntr1 = cntr3 + 1;
                 goto label;
             }
-            return -1;//Слово не найдено
+            return -1;//РЎР»РѕРІРѕ РЅРµ РЅР°Р№РґРµРЅРѕ
         }
     }
     return cntr3;
 }
 
-//------------------------- KMP ФУНКЦИЯ ----------------------
-//Алгоритм считающий префикс функцию
+//------------------------- KMP Р¤РЈРќРљР¦РРЇ ----------------------
+//РђР»РіРѕСЂРёС‚Рј СЃС‡РёС‚Р°СЋС‰РёР№ РїСЂРµС„РёРєСЃ С„СѓРЅРєС†РёСЋ
 vector<int> prefFunc(string s) 
 {
     int n = s.length();
@@ -149,7 +148,7 @@ vector<int> prefFunc(string s)
     return intArr;
 }
 
-//Алгоритм Кнута - Морриса - Пратта
+//РђР»РіРѕСЂРёС‚Рј РљРЅСѓС‚Р° - РњРѕСЂСЂРёСЃР° - РџСЂР°С‚С‚Р°
 size_t kmp_find(string str, std::string findStr)
 {
     vector<int> pIntArr = prefFunc(findStr);
@@ -163,7 +162,7 @@ size_t kmp_find(string str, std::string findStr)
             k++;
 
         if (k == findStr.length())
-            return (i - findStr.length() + 1); //либо продолжаем поиск следующих вхождений
+            return (i - findStr.length() + 1); //Р»РёР±Рѕ РїСЂРѕРґРѕР»Р¶Р°РµРј РїРѕРёСЃРє СЃР»РµРґСѓСЋС‰РёС… РІС…РѕР¶РґРµРЅРёР№
     }
 
     return -1;
