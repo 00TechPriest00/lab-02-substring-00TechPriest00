@@ -38,23 +38,47 @@ size_t str_find(const std::string& str, const std::string& substr)
 	int b = strLen(substr);
 	for (int i = 0; i < a; i++)
 	{
-		if (substr[0] == str[i])
-		{
+		if (substr[0] == str[i]){
 			int j = 0;
 			for (; j < b; j++)
 			{
-				if (substr[j] != str[i + j])
-				{
+				if (substr[j] != str[i + j]){
 					break;
 				}
 			}
-			if (j == b)
-			{
+			if (j == b){
 				return i;
 			}
 		}
 	}
 	return -1;
+}
+
+//--------------------------- RK_FIND ----------------------------------------
+long long calcHush(const string & str, int len, int indStart)
+{
+	long long prime = PRIMEVAL;
+	int oldPrime = PRIMEVAL;
+	long long hush = 0;
+	char a;
+	for (int i = indStart; i < indStart + len; i++)
+	{
+		a = str[i];
+		if (i == indStart){
+
+			hush = (int)a;
+		}
+		else
+		{
+			hush += ((int)a)*prime;
+			prime = prime*oldPrime;
+			if (hush >= 9223372036854775807)
+			{
+				hush = 0;
+			}
+		}
+	}
+	return hush;
 }
 
 size_t rk_find(const std::string& str, const std::string& substr)
@@ -72,8 +96,7 @@ size_t rk_find(const std::string& str, const std::string& substr)
 label:
 	while (buff != hush)
 	{
-		if (cntr1 + len >= totalch)
-		{
+		if (cntr1 + len >= totalch){
 			return -1;
 		}
 
@@ -83,20 +106,15 @@ label:
 		c = pow(prime, len - 1);
 		e = ((int)str[cntr1 + len])*c;
 		buff = b + e;
-		//buff = (buff - ((int)str[cntr1])) / prime + ((int)str[cntr2])*powX(prime, len - 1);
-		//if (buff != hush)
 		cntr1++;
-		//cntr2++;
 	}
 	int cntr3 = cntr1;
 	for (int k = 0; k < strLen(substr); k++)
 	{
-		if (str[cntr1] == substr[k])
-		{
+		if (str[cntr1] == substr[k]){
 			cntr1++;
 		}
-		else
-		{
+		else{
 			if (cntr1 < totalch - 1)
 			{
 				buff = calcHush(str, strLen(substr), cntr3 + 1);
@@ -109,35 +127,7 @@ label:
 	return cntr3;
 }
 
-long long calcHush(const string & str, int len, int indStart)
-{
-	long long prime = PRIMEVAL;
-	int oldPrime = PRIMEVAL;
-	long long hush = 0;
-	char a;
-	//int leN = strLen(substr);
-	for (int i = indStart; i < indStart + len; i++)
-	{
-		a = str[i];
-		if (i == indStart)
-		{
-
-			hush = (int)a;
-		}
-		else
-		{
-			hush += ((int)a)*prime;
-			prime = prime*oldPrime;
-			if (hush >= 9223372036854775807)
-			{
-				hush = 0;
-			}
-		}
-	}
-	return hush;
-}
-
-//Алгоритм считающий длинну префикс функции
+//Алгоритм считающий префикс функцию
 vector<int> prefFunc(string s) 
 {
 	int n = s.length();
@@ -150,8 +140,7 @@ vector<int> prefFunc(string s)
 		{
 			j = intArr[j - 1];
 		}
-		if (s[i] == s[j])  ++j;
-		{
+		if (s[i] == s[j])  ++j;{
 			intArr[i] = j;
 		}
 	}
