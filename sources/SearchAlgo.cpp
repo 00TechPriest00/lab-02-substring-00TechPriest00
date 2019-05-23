@@ -126,7 +126,7 @@ label:
 
 //------------------------- KMP ФУНКЦИЯ ----------------------
 //Алгоритм считающий префикс функцию
-vector<int> prefFunc(string s) 
+vector<int> prefFunc(string s)
 {
     int n = s.length();
     vector<int> intArr(n);
@@ -159,8 +159,8 @@ size_t kmp_find(string str, std::string findStr)
         if (findStr[k] == str[i])
             k++;
 
-        if (k == findStr.length())
-            return (i - findStr.length() + 1); //либо продолжаем поиск следующих вхождений
+        if (k == findStr.length())//либо продолжаем поиск следующих вхождений
+            return (i - findStr.length() + 1); 
     }
 
     return -1;
