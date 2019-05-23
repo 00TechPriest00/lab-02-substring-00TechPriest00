@@ -99,10 +99,10 @@ label:
         }
 
         _int64 a, b, c, e;
-		a = buff - static_cast<int>(str[cntr1]);
+        a = buff - static_cast<int>(str[cntr1]);
         b = a / prime;
         c = pow(prime, len - 1);
-		e = (static_cast<int>(str[cntr1 + len]))*c;
+        e = (static_cast<int>(str[cntr1 + len]))*c;
         buff = b + e;
         cntr1++;
     }
@@ -113,7 +113,7 @@ label:
             cntr1++;
         }else{
             if (cntr1 < totalch - 1)
-			{
+            {
                 buff = calcHush(str, strLen(substr), cntr3 + 1);
                 cntr1 = cntr3 + 1;
                 goto label;
@@ -131,14 +131,14 @@ vector<int> prefFunc(string s)
     int n = s.length();
     vector<int> intArr(n);
     intArr[0] = 0;
-    for (int i = 1; i<n; ++i) 
+    for (int i = 1; i < n; ++i)
     {
         int j = intArr[i - 1];
         while (j > 0 && s[i] != s[j])
         {
             j = intArr[j - 1];
         }
-        if (s[i] == s[j]){  
+        if (s[i] == s[j]){
             ++j;
         }
         intArr[i] = j;
@@ -164,5 +164,4 @@ size_t kmp_find(string str, std::string findStr)
     }
 
     return -1;
-
 }
