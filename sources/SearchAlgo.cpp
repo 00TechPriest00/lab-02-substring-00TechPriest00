@@ -1,3 +1,4 @@
+//"Copyright 2019 Fedorov George"
 #include "SearchAlgo.h"
 #define PRIMEVAL 2
 
@@ -18,12 +19,13 @@ int strLen(const string& str)
     }
     return count;
 }
-long long powX(long long x, long long y)
+
+_int64 powX(_int64 x, _int64 y)
 {
     if (y == 0)
         return 1;
 
-    long long retval = x;
+    _int64 retval = x;
     while (y > 0)
     {
         y--;
@@ -55,11 +57,11 @@ size_t str_find(const std::string& str, const std::string& substr)
 }
 
 //--------------------------- RK_FIND ----------------------------------------
-long long calcHush(const string & str, int len, int indStart)
+_int64 calcHush(const string & str, int len, int indStart)
 {
-    long long prime = PRIMEVAL;
+    _int64 prime = PRIMEVAL;
     int oldPrime = PRIMEVAL;
-    long long hush = 0;
+    _int64 hush = 0;
     char a;
     for (int i = indStart; i < indStart + len; i++)
     {
@@ -83,9 +85,9 @@ long long calcHush(const string & str, int len, int indStart)
 
 size_t rk_find(const std::string& str, const std::string& substr)
 {
-    long long hush = 0;
-    long long buff = 0;
-    long long prime = PRIMEVAL;
+    _int64 hush = 0;
+    _int64 buff = 0;
+    _int64 prime = PRIMEVAL;
     int cntr1 = 0;
     //int cntr2 = strLen(substr);
     int totalch = strLen(str);
@@ -100,7 +102,7 @@ label:
             return -1;
         }
 
-        long long a, b, c, e;
+        _int64 a, b, c, e;
         a = buff - (int)str[cntr1];
         b = a / prime;
         c = pow(prime, len - 1);
