@@ -101,10 +101,10 @@ label:
         }
 
         _int64 a, b, c, e;
-        a = buff - (int)str[cntr1];
+		a = buff - static_cast<int>(str[cntr1]);
         b = a / prime;
         c = pow(prime, len - 1);
-        e = ((int)str[cntr1 + len])*c;
+		e = (static_cast<int>(str[cntr1 + len]))*c;
         buff = b + e;
         cntr1++;
     }
@@ -113,8 +113,8 @@ label:
     {
         if (str[cntr1] == substr[k]){
             cntr1++;
-        }
-        else{
+        }else
+		{
             if (cntr1 < totalch - 1)
 			{
                 buff = calcHush(str, strLen(substr), cntr3 + 1);
@@ -127,6 +127,7 @@ label:
     return cntr3;
 }
 
+//------------------------- KMP ФУНКЦИЯ ----------------------
 //Алгоритм считающий префикс функцию
 vector<int> prefFunc(string s) 
 {
