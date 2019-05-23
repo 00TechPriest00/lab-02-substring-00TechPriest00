@@ -160,7 +160,7 @@ size_t kmp_find(string str, std::string findStr)
             k++;
 
         if (k == findStr.length())//либо продолжаем поиск следующих вхождений
-            return (i - findStr.length() + 1); 
+            return (i - findStr.length() + 1);
     }
 
     return -1;
