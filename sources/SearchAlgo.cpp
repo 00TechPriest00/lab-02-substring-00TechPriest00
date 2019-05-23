@@ -20,12 +20,12 @@ int strLen(const string& str)
     return count;
 }
 
-long powX(long x, long y)
+int powX(int x, int y)
 {
     if (y == 0)
         return 1;
 
-    long retval = x;
+    int retval = x;
     while (y > 0)
     {
         y--;
@@ -57,11 +57,11 @@ size_t str_find(const std::string& str, const std::string& substr)
 }
 
 //--------------------------- RK_FIND ----------------------------------------
-long calcHush(const string & str, int len, int indStart)
+int calcHush(const string & str, int len, int indStart)
 {
-    long prime = PRIMEVAL;
+    int prime = PRIMEVAL;
     int oldPrime = PRIMEVAL;
-    long hush = 0;
+    int hush = 0;
     char a;
     for (int i = indStart; i < indStart + len; i++)
     {
@@ -81,9 +81,9 @@ long calcHush(const string & str, int len, int indStart)
 
 size_t rk_find(const std::string& str, const std::string& substr)
 {
-    long hush = 0;
-    long buff = 0;
-    long prime = PRIMEVAL;
+    int hush = 0;
+    int buff = 0;
+    int prime = PRIMEVAL;
     int cntr1 = 0;
     //int cntr2 = strLen(substr);
     int totalch = strLen(str);
@@ -98,7 +98,7 @@ label:
             return -1;
         }
 
-        long a, b, c, e;
+        int a, b, c, e;
         a = buff - static_cast<int>(str[cntr1]);
         b = a / prime;
         c = pow(prime, len - 1);

@@ -19,7 +19,7 @@
 using namespace std;
 
 int strLen(const string& str);
-long powX(long x, long y);
+int powX(int x, int y);
 size_t str_find(const std::string& str, const std::string& substr);
 long calcHush(const string & str, int len, int indStart);
 size_t rk_find(const std::string& str, const std::string& substr);
